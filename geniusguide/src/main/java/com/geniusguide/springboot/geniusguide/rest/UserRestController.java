@@ -44,7 +44,7 @@ public class UserRestController {
 	}
 	
 	
-	@PostMapping("/users")
+	@PostMapping("/user")
 	public User addUser(@RequestBody User theuser) {
 		
 		theuser.setId(0);
@@ -56,7 +56,7 @@ public class UserRestController {
 	}
 	
 	
-	@PutMapping("/users")
+	@PutMapping("/user")
 	public User updateuser(@RequestBody User theuser) {
 		
 		User dbuser = userservice.save(theuser);

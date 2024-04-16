@@ -24,7 +24,7 @@ public class UserDAOJpaImpl implements UserDAO{
 	public List<User> findAll() {
 		// TODO Auto-generated method stub
 		
-		TypedQuery<User> thequery = entitymanager.createQuery("from User ", User.class);
+		TypedQuery<User> thequery = entitymanager.createQuery("from User", User.class);
 		
 		List<User> users = thequery.getResultList();
 		
@@ -50,6 +50,10 @@ public class UserDAOJpaImpl implements UserDAO{
 	public void delete(int id) {
 		// TODO Auto-generated method stub
 		User dbuser = entitymanager.find(User.class, id);
+		
+		if(dbuser == null) {
+			throw new RuntimeException("The User id "+id+"Not Found");
+		}
 		
 		entitymanager.remove(dbuser);
 	}

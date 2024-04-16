@@ -8,5 +8,5 @@ public class GeniusguideApplication {
 
 	public static void main(String[] args) {
 		SpringApplication.run(GeniusguideApplication.class, args);
-	}
+	}  
 }
