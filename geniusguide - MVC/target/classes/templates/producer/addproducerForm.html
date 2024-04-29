@@ -1,0 +1,37 @@
+ <!DOCTYPE html>
+<html  xmlns:th="http://www.thymeleaf.org">
+<head>
+<meta charset="ISO-8859-1">
+<title>Add-Cutomers</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+
+</head>
+<body>
+
+	<div class="container">
+		<h3>Producer Directory</h3>
+		<hr>
+		
+		<p class="h4 mb-4">Save Producer</p>
+		
+	
+	<form th:action="@{/producer/processproducer}"  th:object="${customer}" method="POST">
+	
+				<input type="hidden" th:field="*{id}">
+		
+				First Name : <input type="text" th:field="*{first_name}" placeholder="First Name">
+		<br><br>
+				Last Name : <input type="text" th:field="*{last_name}" placeholder="Last Name">
+		<br><br>
+				Email id : <input type="email" th:field="*{email}" placeholder="Mail id">
+		<br><br>
+				password : <input type="password" th:field="*{password}" placeholder="Password">
+		<br><br>
+				<input type="submit">
+		
+			</form>
+			<a th:href="@{/producer/list}" class="btn btn-outline-primary"> Producer List </a>
+		</div>
+	</body>
+</html>
